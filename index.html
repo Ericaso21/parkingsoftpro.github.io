@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="ParkingSoft">
+    <meta name="theme-color" content="#009688"> 
+    <link rel="shortcut icon" href="Assets/images/uploads/favicon.ico">
+    <!-- Main CSS-->
+    <link rel="stylesheet" type="text/css" href="Assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="Assets/css/style.css">
+    <title>ParkingSoft</title>
+  </head>
+  <body>
+    <div class="modal fade" id="modalFormRegistrar" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+              <div class="modal-header headerRegister">
+                  <h5 class="modal-title" id="titleModal">Registro Usuarios</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <form id="formRegistrar" name="formRegistrar">
+                      <div class="form-row">
+                          <div class="form-group col-md-6">
+                              <label for="txtNombre1">Primer nombre</label>
+                              <input class="form-control" type="text" name="txtNombre1" id="txtNombre1" placeholder="Primer Nombre">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="txtNombre1">Segundo nombre</label>
+                            <input class="form-control" type="text" name="txtNombre2" id="txtNombre2" placeholder="Segundo Nombre">
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="txtNombre1">Primer apellido</label>
+                            <input class="form-control" type="text" name="txtApel1" id="txtApel1" placeholder="Primer Apellido">
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="txtNombre1">Segundo apellido</label>
+                          <input class="form-control" type="text" name="txtApel2" id="txtApel2" placeholder="Segundo Apellido">
+                      </div>
+                    </div>
+                      <div class="form-row">
+                          <div class="form-group col-md-4">
+                              <label for="floatTarifaMinuto">Numero documento</label>
+                              <input class="form-control" type="text" id="txtNumDocumento" name="txtNumDocumento" required>
+                          </div>
+                          <div class="form-group col-md-4">
+                              <label for="floatTarifaHora">Tipo documento</label>
+                              <select class="form-control" name="intTpdocumento" id="intTpdocumento" required>
+                                <option value="0">Seleccione</option>
+                                <option value="1">Cedula ciudadania</option>
+                                <option value="2">Cedula extranjeria</option>
+                                <option value="3">Tarjeta de identidad</option>
+                                <option value="4">Pasaporte</option>
+                            </select>
+                          </div>
+                          <div class="form-group col-md-4">
+                              <label for="floatTarifaDia">Nombre Usuario</label>
+                              <input class="form-control" type="text" id="txtNomUsuario" name="txtNomUsuario" required>
+                          </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-4">
+                          <label for="txtNombre1">Genero</label>
+                          <select class="form-control" name="intGenero" id="intGenero" required>
+                            <option value="0">Seleccione genero</option>
+                            <option value="1">Masculino</option>
+                            <option value="2">Femenino</option>
+                            <option value="3">Otro</option>
+                        </select>
+                      </div>
+                        <div class="form-group col-md-4">
+                            <label for="txtNombre1">Correo electronico</label>
+                            <input class="form-control" type="email" name="txtEmailUs" id="txtEmailUs" placeholder="Correo electronico">
+                        </div>
+                        <div class="form-group col-md-4">
+                          <label for="txtNombre1">Contraseña</label>
+                          <input class="form-control" type="password" name="txtPasswordUs" id="txtPasswordUs" placeholder="Contraseña">
+                      </div>
+                    </div>
+                      <div class="tile-footer">
+                          <button id="btnActionForm" class="btn btn-primary" type="submit"><i
+                                  class="fa fa-fw fa-lg fa-check-circle"></i><span
+                                  id="btnText">Guardar</span></button>&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary"
+                              data-dismiss="modal"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancelar</a>
+                      </div>
+  
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+    <section class="material-half-bg">
+      <div class="cover"></div>
+    </section>
+    <section class="login-content">
+      <div class="logo">
+        <h1 class="titleParkingSoft">ParkingSoft</h1>
+      </div>
+      <div class="login-box">
+        <form class="login-form" name="formLogin" id="formLogin">
+          <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>Iniciar Sesión</h3>
+          <div class="form-group">
+            <label class="control-label">Usuario</label>
+            <input id="txtEmail" name="txtEmail" class="form-control" type="email" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label class="control-label">Contraseña</label>
+            <input id="txtPassword" name="txtPassword" class="form-control" type="password" placeholder="Contraseña">
+          </div>
+          <div class="form-group">
+            <div class="utility">
+              <div class="animated-checkbox">
+                <label>
+                  <input type="checkbox"><span class="label-text">Recuerdame</span>
+                </label>
+              </div>
+              <p class="semibold-text mb-2"><a href="#" data-toggle="flip">Olvidaste tu contraseña?</a></p>
+            </div>
+          </div>
+          <div id="alertLogin" class="text-center"></div>
+          <div class="form-group btn-container">
+            <button type="submit" class="btn btn-primary btn-lg"><i class="fa fa-sign-in-alt"></i>Ingresar</button>
+            <button type="button" onclick="openModalRegistrar()" class="btn btn-info  btn-lg"><i class="fa fa-sign-in-alt"></i>Registarse</button>
+          </div>
+          
+        </form>
+
+        <form class="forget-form" action="index.html">
+          <h3 class="login-head"><i class="fa fa-lg fa-fw fa-lock"></i>Olvidaste tu contraseña?</h3>
+          <div class="form-group">
+            <label class="control-label">EMAIL</label>
+            <input id="txtEmailReset"  class="form-control" type="text" placeholder="Email">
+          </div>
+          <div class="form-group btn-container">
+            <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-unlock fa-lg fa-fw"></i>Recuperar</button>
+          </div>
+          <div class="form-group mt-3">
+            <p class="semibold-text mb-0"><a href="#" data-toggle="flip"><i class="fa fa-angle-left fa-fw"></i> Regresar a Login</a></p>
+          </div>
+        </form>
+      </div>
+    </section>
+    <script>
+        const base_url = "https://boiling-spire-02199.herokuapp.com";
+    </script>
+    <!-- Essential javascripts for application to work-->
+    <script src="Assets/js/jquery-3.3.1.min.js"></script>
+    <script src="Assets/js/popper.min.js"></script>
+    <script src="Assets/js/bootstrap.min.js"></script>
+    <script src="Assets/js/fontawesome.js"></script>
+    <script src="Assets/js/main.js"></script>
+    <!-- The javascript plugin to display page loading on top-->
+    <script src="Assets/js/plugins/pace.min.js"></script>
+    <script type="text/javascript" src="Assets/js/plugins/sweetalert.min.js"></script>
+    <script src="Assets/js/functions_login.js"></script>
+  </body>
+</html>

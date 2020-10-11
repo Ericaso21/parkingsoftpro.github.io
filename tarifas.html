@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="description" content="Parquedero Parkingsoft">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="ECEJS">
+    <meta name="theme-color" content="#009688">
+    <link rel="shortcut icon" href="Assets/images/uploads/favicon.ico">
+    <title>Usuarios</title>
+    <!-- Main CSS-->
+    <link rel="stylesheet" type="text/css" href="Assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="Assets/css/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="Assets/css/style.css">
+</head>
+
+<body class="app sidebar-mini">
+    <!-- Navbar-->
+    <header class="app-header"><a class="app-header__logo" href="dashboard.html">Parkingsoft</a>
+        <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar"
+            aria-label="Hide Sidebar"></a>
+        <!-- Navbar Right Menu-->
+        <ul class="app-nav">
+            <!-- User Menu-->
+            <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown"
+                    aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
+                <ul class="dropdown-menu settings-menu dropdown-menu-right">
+                    <li><a class="dropdown-item" href="opciones.html"><i class="fa fa-cog fa-lg"></i>
+                            Opciones</a></li>
+                    <li><a class="dropdown-item" href="perfil.html"><i class="fa fa-user fa-lg"></i>
+                            Perfil</a></li>
+                    <li><a class="dropdown-item" href="index.html"><i class="fa fa-sign-out fa-lg"></i>
+                            Cerrar sesión</a></li>
+                </ul>
+            </li>
+        </ul>
+    </header>
+    <!-- Sidebar menu-->
+    <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+    <aside class="app-sidebar">
+        <div class="app-sidebar__user"><img class="app-sidebar__user-avatar"
+                src="Assets/images/uploads/avatar.png" alt="User Image">
+            <div>
+                <p class="app-sidebar__user-name">Eric Solarte</p>
+                <p class="app-sidebar__user-designation">Administrador</p>
+            </div>
+        </div>
+        <ul class="app-menu">
+            <li><a class="app-menu__item" href="dashboard.html"><i class="app-menu__icon fa fa-id-badge"
+                        aria-hidden="true"></i><span class="app-menu__label">Dashboard</span></a>
+            </li>
+            <li><a class="app-menu__item" href="usuarios.html">
+                    <i class="app-menu__icon fa fa-users" aria-hidden="true"></i><span
+                        class="app-menu__label">Usuarios</span></a>
+            </li>
+            <li><a class="app-menu__item" href="rolesUsuarios.html">
+                    <i class="app-menu__icon fa fa-users" aria-hidden="true"></i><span
+                        class="app-menu__label">Roles Usuarios</span></a>
+            </li>
+            <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i
+                        class="app-menu__icon fa fa-car" aria-hidden="true"></i><span
+                        class="app-menu__label">Vehiculos</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+                <ul class="treeview-menu">
+                <li><a class="treeview-item" href="tipoVehiculo.html"><i
+                                class="icon fa fa-circle-o"></i> Tipo vehiculo</a></li>
+                    <li><a class="treeview-item" href="registroVehiculos.html"><i
+                                class="icon fa fa-circle-o"></i> Registrar vehiculos</a></li>
+                </ul>
+            </li>
+            <li><a class="app-menu__item" href="tarifas.html"><i
+                        class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Tarifas</span></a></li>
+            <li><a class="app-menu__item" href="index.html"><i class="app-menu__icon fa fa-sign-out"
+                        aria-hidden="true"></i><span class="app-menu__label">Cerrar
+                        sesión</span></a></li>
+        </ul>
+    </aside>
+<!-- Modal -->
+<div class="modal fade" id="modalFormTarifas" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header headerRegister">
+                <h5 class="modal-title" id="titleModal">Nueva Tarifa</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="formTarifas" name="formTarifas">
+                    <input type="hidden" id="idTarifa" name="idTarifa" value="">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="listTipoVehiculo">Tipo Vehiculo</label>
+                            <select class="form-control" data-live-search="true" id="listTipoVehiculo" name="listTipoVehiculo" required></select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="floatTarifaMinuto">Tarifa Minuto</label>
+                            <input class="form-control" type="text" id="floatTarifaMinuto" name="floatTarifaMinuto" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="floatTarifaHora">Tarifa Hora</label>
+                            <input class="form-control" type="text" id="floatTarifaHora" name="floatTarifaHora" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="floatTarifaDia">Tarifa Día</label>
+                            <input class="form-control" type="text" id="floatTarifaDia" name="floatTarifaDia" required>
+                        </div>
+                    </div>
+                    <div class="tile-footer">
+                        <button id="btnActionForm" class="btn btn-primary" type="submit"><i
+                                class="fa fa-fw fa-lg fa-check-circle"></i><span
+                                id="btnText">Guardar</span></button>&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary"
+                            data-dismiss="modal"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancelar</a>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+    <main class="app-content">
+        <div class="app-title">
+            <div>
+                <h1><i class="fas fa-users"></i>Tarifas
+                    <button class="btn btn-primary" type="button" onclick="openModalTarifas();"><i class="fas fa-plus-circle"></i>
+                        Nuevo </button>
+                </h1>
+            </div>
+            <ul class="app-breadcrumb breadcrumb">
+                <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+                <li class="breadcrumb-item"><a href="<?= base_url(); ?>usuarios">Tarifas</a></li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tile">
+                    <div class="tile-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-bordered" id="tableTarifas">
+                                <thead>
+                                    <tr>
+                                        <th>Tipo Vehiculo</th>
+                                        <th>Tarifa minuto</th>
+                                        <th>Tarifa hora</th>
+                                        <th>Tarifa diaria</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        const base_url = "https://boiling-spire-02199.herokuapp.com";
+    </script>
+    <!-- Essential javascripts for application to work-->
+    <script src="Assets/js/jquery-3.3.1.min.js"></script>
+    <script src="Assets/js/popper.min.js"></script>
+    <script src="Assets/js/bootstrap.min.js"></script>
+    <script src="Assets/js/main.js"></script>
+    <script src="Assets/js/fontawesome.js"></script>
+    <!-- The javascript plugin to display page loading on top-->
+    <script src="Assets/js/plugins/pace.min.js"></script>
+    <script type="text/javascript" src="Assets/js/plugins/sweetalert.min.js"></script>
+    <!-- Data table plugin-->
+    <script type="text/javascript" src="Assets/js/plugins/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="Assets/js/plugins/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="Assets/js/plugins/bootstrap-select.min.js"></script>
+    <script src="Assets/js/functions_tarifas.js"></script>
+    
+    
+    
+    
+    </body>
+    </html>
