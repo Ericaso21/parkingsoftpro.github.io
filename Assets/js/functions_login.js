@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function(){
                         var objData = JSON.parse(request.responseText);
                         if(objData.status)
                         {
-                            window.location = 'http://localhost/pruebahtml/dashboard.html';
+                            window.location = 'https://ericaso21.github.io/parkingsoftpro.github.io/dashboard.html';
                         }else{
                             swal("Atencion", objData.msg, "error");
                                 document.querySelector('#txtPassword').value = "";
